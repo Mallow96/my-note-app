@@ -1,34 +1,33 @@
 # My Note App 📝
 
-一個基於 **Vue 3.5** 構建的高性能單頁應用程式 (SPA)。本專案結合了全域狀態管理與動態路由導航，提供使用者直覺、快速且具備資料持久性的筆記管理體驗。
+一個基於 **Vite** 與 **Vue 3.5** 構建的高性能單頁筆記應用程式 (SPA)。本專案旨在展示現代前端工具鏈的整合，包括全域狀態管理、動態路由導航以及瀏覽器端資料持久化技術。
 
 ## 🌟 核心特色
-* **Vue 3 (Composition API)**：採用最新標準，建構模組化且易於擴充的組件架構。
-* **多頁面導航系統 (Vue Router)**：
-    * **主頁 (Home)**：應用程式進入點與概覽。
-    * **所有筆記 (All Notes)**：完整的筆記清單瀏覽與管理。
-    * **新增筆記 (Add Note)**：專屬的筆記創作介面。
-* **精準狀態管理 (Pinia Store)**：
-    * 透過 `note_store.js` 處理筆記的 CRUD (增、刪、改、查) 邏輯。
-    * **自動持久化**：使用 `watch` 深度監聽資料，自動同步至 `localStorage`。
-* **現代化工具鏈**：由 **Vite** 驅動，確保極速的開發環境與最佳化的生產環境打包。
+* **Vite 驅動**：利用原生 ESM 模組提供極速的冷啟動與秒級熱更新 (HMR)，最佳化開發體驗。
+* **Vue 3 (Composition API)**：使用最新的 `script setup` 語法，實現高內聚、低耦合的組件開發。
+* **全域狀態管理 (Pinia)**：
+    * 透過 `note_store.js` 集中管理筆記資料。
+    * **自動化持久化**：深度監聽資料變動，自動同步至 `localStorage`。
+* **多頁面路由系統 (Vue Router)**：
+    * 使用 **HTML5 History 模式** 實現流暢的無刷新頁面切換。
+    * 包含 `Home`、`All Notes` 與 `Add Note` 三大核心視圖。
+* **非同步通訊能力**：整合 **Axios**，為未來擴充雲端資料庫串接奠定基礎。
 
 ## 🛠 技術棧 (Tech Stack)
 | 技術 | 工具 | 描述 |
 | :--- | :--- | :--- |
+| **Build Tool** | **Vite** | 次世代前端構建工具 |
 | **Framework** | Vue 3.5 | 核心前端框架 |
-| **State** | Pinia 3.0 | 全域資料流管理 |
-| **Routing** | Vue Router 4.5 | 單頁應用路由導覽 |
-| **Network** | Axios 1.11 | 非同步資料請求處理 |
-| **Persistence** | LocalStorage | 瀏覽器端資料持久化 |
+| **State** | Pinia 3.0 | 狀態管理與持久化邏輯 |
+| **Routing** | Vue Router 4.5 | 單頁應用路徑導覽 |
+| **Network** | Axios 1.11 | Promise 基礎的 HTTP 客戶端 |
 
 
 
-## 📁 專案導航結構
-本專案定義了明確的路由邏輯，確保使用者體驗流暢：
-* `/` : `HomeView` - 歡迎頁面與主要導覽。
-* `/allNotes` : `AllNotesView` - 檢視所有已儲存的筆記，支援刪除操作。
-* `/addNote` : `AddNoteView` - 提供表單輸入，快速建立新筆記。
+## 📁 專案路由導航
+* `/` : **首頁** (HomeView)
+* `/allNotes` : **所有筆記** (AllNotesView) - 瀏覽與刪除已存筆記
+* `/addNote` : **新增筆記** (AddNoteView) - 筆記撰寫介面
 
 GitHub Page: https://mallow96.github.io/my-note-app/#/
 
